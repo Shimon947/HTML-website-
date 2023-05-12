@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+      <head>
+
+
+        
+          <title>payment page</title>
+          <script>
+   function validateForm() {
+            
+            var firstname = document.forms.PayDetails.firstname.value;
+            var lastname = document.forms.PayDetails.lastname.value;
+            var IDn = document.forms.PayDetails.IDn.value;
+            var PhoneNumbers =document.forms.PayDetails.PhoneNumbers.value;
+            var adress = document.forms.PayDetails.adress.value;
+            var cctype = document.forms.PayDetails.cctype.value;
+            var CardN = document.forms.PayDetails.CardN.value;
+            var cvv = document.forms.PayDetails.cvv.value;
+            var agreement= document.getElementById('agreement');
+
+
+            var PayDetailsfirstname = /\d+$/g;
+            var PayDetailslastname = /\d+$/g;
+            var PayDetailsIDn=/[^0-9\-]/;
+            var PayDetailsPhoneNumbers=/[^0-9\-]/;
+            var PayDetailsadress = /[A-Za-z0-9'\.\-\s\,]\d+$/;
+            var PayDetailscctype = /\d+$/g;
+            var PayDetailsCardN=/[^0-9\-]/;
+            var PayDetailscvv=/[^0-9\-]/;
+            var PayDetailsagreement= /\d+$/g;
+            
+              
+           
+
+            if (firstname == "" || PayDetailsfirstname.test(firstname)) {
+              alert("Please enter your first name properly.");
+                return false;
+                     }
+                     if (lastname == "" || PayDetailslastname.test(lastname)) {
+              alert("Please enter your last name properly.");
+                return false;
+                     }
+                     if (IDn == "" || PayDetailsIDn.test(IDn)|| IDn.length<9||IDn.length>9) {
+              alert("Please enter your ID number properly.");
+                return false;
+                     }
+                     if (PhoneNumbers == "" || PayDetailsPhoneNumbers.test(PhoneNumbers)|| PhoneNumbers.length<7||PhoneNumbers.length>7) {
+              alert("Please enter your phone number properly.");
+                return false;
+
+                     }
+                     if (adress == "" || PayDetailsadress.test(adress)) {
+              alert("Please enter your adress properly.");
+                return false;
+                     }
+                     if (cctype == "" || PayDetailscctype.test(cctype)) {
+              alert("Please select your credit cartd type.");
+                return false;
+                     }
+                     if (CardN == "" || PayDetailsCardN.test(CardN)|| CardN.length<16||CardN.length>16) {
+              alert("Please enter your credit cartd number properly.");
+                return false;
+                     }
+                     if (cvv == "" || PayDetailscvv.test(cvv)|| cvv.length<3||cvv.length>3) {
+              alert("Please enter cvv properly.");
+                return false;
+                     }
+                     if (!PayDetails.agreement.checked) {
+              alert("Please mark the checkbox.");
+                return false;
+                     }
+                     return true;
+
+           }
+   
+   </Script>
+             <link type="text/CSS" a href="returnbutton.css" rel="stylesheet"/>
+            <style type="text/CSS">
+ #logo{
+               
+  width: 220px;height: 130px;margin-right: 1200px;
+      }
+ .bg{
+    opacity: 0.5;position:absolute;
+    left: 0;top: 0;
+    width: 
+    100%;height:1000px;
+        }
+
+ h1{
+  text-align: center;font-size: 35px;
+  }
+
+ table{ width:500px ;height: 400px;  background-color:#fee3c5 ;font-weight: bolder;margin: auto;
+       }
+
+ .contant{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+         font-weight: bolder;color: black;text-align: center;
+        position: relative;border: 6;
+         }
+
+  .input{border: 2px solid #4b9ce4;border-radius: 30px;margin-top: 5px;}
+
+  .btnpayclean{border: 0px solid #000;
+    border-radius: 30px;padding: 10px 10px;
+    background-color: #196BCA;
+    background: linear-gradient(to right,#196BCA ,#e0d533);
+    font-weight: bold;}
+
+td{padding: 1px;}
+
+        </style>
+
+     </head>
+<body>
+  <br>
+  <img
+  class="bg"
+  src="images/iPhone_Samsung-w1400h1050.jpg">
+
+  <div class="contant"><img id="logo" src="images/mylogo.jpg">
+    <br>
+    <h1>Payment page</h1>
+    
+    <table>
+      <form  name="PayDetails" action="ThanksForPurchse.html" onsubmit="return validateForm()" method="post">
+       
+             
+            <tr>
+            <td style="font-size: larger;color:#4b9ce4;"><b><i>Payer Details</i></b></td>
+            <td></td></tr>
+            <tr>
+            <td>First Name:</td>
+            <td><input class="input" type="text" name="firstname"/></td>
+            </tr>
+            <tr>
+            <td>Last Name:</td>
+            <td><input class="input" type="text" name="lastname"/></td>
+            </tr>
+            <tr>
+            <td>ID No:</td>
+            <td><input class="input" type="text" name="IDn" maxlength="9"/></td>
+            </tr>
+            <tr>
+            <td>Phone:</td>
+            <td><select class="input" name="phone">
+                <option value="050">050</option>
+                <option value="052">052</option>
+                <option value="053">053</option>
+                <option value="054">054</option></select>
+                <input class="input" type="text" name="PhoneNumbers" maxlength="7" style="width: 113px;"/></td>
+            </tr>
+             <tr>
+               <td>Adress</td>
+               <td><input class="input" type="text"  name="adress" /></td>
+
+             </tr>
+             <tr>
+                <td style="font-size: larger;color:#4b9ce4;"><b><i>Card Details</i></b></td>
+            <td></td></tr>
+            <tr>
+            <td>Card Type</td>
+            <td><input type="radio" name="cctype" value="visa" checked/>VISA
+                <input type="radio" name="cctype" value="Master card"/>MasterCard  
+
+            </td>
+            </tr>
+            <tr>
+            <td>Card No:</td>
+            <td><input class="input" type="password" name="CardN" maxlength="16" /></td>
+            </tr>
+            <tr>
+            <td>CVV:</td>
+            <td><input class="input" type="password" name="cvv" maxlength="3"/></td>
+            </tr>
+            <tr>
+            <td>Expired Date:</td>
+            <td><select class="input" name="Month">
+                <option value="january">01</option>
+                <option value="february">02</option>
+                <option value="march">03</option>
+                <option value="april">04</option>
+                <option value="may">05</option>
+                <option value="june">06</option>
+                <option value="july">07</option>
+                <option value="august">08</option>
+                <option value="september">09</option>
+                <option value="october">10</option>
+                <option value="november">11</option>
+                <option value="december">12</option>
+              </select>
+              <select class="input" name="Year">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                </select>
+                </td>
+                </tr>
+            <tr>
+            <td>I agree</td>
+            <td><input type="checkbox" id="agreement" value="agreement"/></td>
+            </tr>
+           
+            <tr>
+               
+               <td colspan="1"><br><br>
+                <td><input class="btnpayclean" type="submit" value="pay" formtarget="_blank"/>
+                <input class="btnpayclean" type="reset" value="clean"></td>
+               </td>
+            </tr>
+         </tr>
+       </form>
+      </table>
+      <a class="my-button" href="Homepage.html">Return to home</a>
+    </div>
+     </body>
+    </html>
+    

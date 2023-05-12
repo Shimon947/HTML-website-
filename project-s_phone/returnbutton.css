@@ -1,0 +1,40 @@
+.bg{
+    opacity: 0.3;position:absolute;
+    left: 0;top: 0;
+    width: 
+    100%;height:1000px;
+        }
+
+ #logo{
+     width: 220px;background-position: left center;position: relative;
+     }
+
+#mainD{
+
+     text-align: center;font-size: 50px;font-weight: bolder;
+     position: relative;
+      }
+
+a.my-button{
+    background: linear-gradient(to right,#196BCA ,#e0d533);
+    background-color: #196BCA;
+    color: #dfd7d7;
+    font-family: Verdana;
+    font-size: 15px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    padding: 12px 19px;
+    border: 0px solid #000;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 20px;
+    position: relative;
+   }
+   a.my-button:hover{
+    background: linear-gradient(to right,#1866c0 ,#d5ca30);
+    background-color: #1866c0;
+   }
+   a.my-button:active{
+    transform: scale(0.95);
+   }

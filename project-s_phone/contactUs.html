@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+      <head>
+          <title>Contact Us</title>
+
+          <script>
+
+
+            function validateForm() {
+            
+              var name = 
+                   document.forms.myForm.name.value;
+              var phone =
+                  document.forms.myForm.phone.value;
+              var email =
+                  document.forms.myForm.email.value;
+              var Subject =
+                  document.forms.myForm.Subject.value;
+              var message =
+                  document.forms.myForm.message.value;
+              var e = document.getElementById("Subject");
+              var optionSelIndex = e.options[e.selectedIndex].value;
+              var optionSelectedText = e.options[e.selectedIndex].text;
+            
+              var myFormEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;  
+              var myFormPhone=/^\d{10}$/;                                        
+              var myFormName = /\d+$/g;
+            
+                            if (name == "" || myFormName.test(name)) {
+                                alert("Please enter your name properly.");
+                                return false;
+                            }
+                            if (phone == "" || !myFormPhone.test(phone)) {
+                                alert("Please enter valid phone number.");
+                                return false;
+                            }
+                            if (email == "" || !myFormEmail.test(email)) {
+                                alert("Please enter a valid e-mail address.");
+                                return false;
+                            }
+                            if (optionSelIndex == 0) {
+                             alert("Please select a Subject");
+                                
+                                return false;
+                            }
+                            if (message == "") {
+                                alert("Please fill out this field");
+                                
+                                return false;
+                            }
+                           
+                            return true;  
+            
+            }
+            </script>
+
+          <link type="text/CSS" href="StyleSheet5.CSS" rel="Stylesheet" />
+          <link type="text/CSS" a href="mystyle.css" rel="Stylesheet" />
+         
+        </head>
+<body>
+<header>
+      
+  
+    <div id="logo"><img src="images/mylogo.jpg" width="200px"/></div>
+    <div><img class="top_image" src="images/topimage.png"></div>
+    
+         <div class="menuDiv">
+              <div class="a"><a href="Homepage.html"><i>Home</i></a></div>
+              <div class="a"><a href="IphoneMobile.html"><i>Iphone Mobile</i></a></div>
+              <div class="a"><a href="GalaxyMobile.html"><i>Galaxy Mobile</i></a></div>
+              <div><a class="active" href="contactUs.html"><i>Contact Us</i></a></div>
+            </div>
+          
+        </header>
+
+<div class="background">
+    <div class="container1">
+      <br>
+      <h1>Contact Us</h1>
+     <p>we would love to respond to your queries and help you succeed.<br>
+      Feel free to get in touch with us.</p>
+      <div class="contact-box">
+        <div class="contact-left">
+              <h3>Send your request</h3>
+              <form name="myForm" action="ThanksForContact.html" onsubmit="return validateForm()" method="post">
+
+                <div  class="input-row">
+                    <div class="input-group">
+                        <label>Name</label>
+                        <input type="text" name="name"/>
+                        </div>  
+                <div class="input-group">
+                    <label>Phone</label>
+                    <input type="text" name="phone"/>
+                      </div>
+                        </div> 
+                <div class="input-row">
+                    <div class="input-group">
+                    <label>Email</label>
+                    <input type="text" name="email"/>
+                     </div>
+              
+                   <div class="input-group"><label>Subject</label> 
+                      <select id="Subject" style="padding-bottom: 5px;">
+                          <option value="0">Select</option>
+                          <option value="1">General info</option>
+                          <option value="2">Inventory check</option>
+                          <option value="3">Order information</option>
+                          <option value="3">Suggestions</option>
+                          <option value="3">Complaint</option>
+                      </select>
+                   </div>                
+                    </div>
+              
+                              <label>Message</label>
+                             <textarea id="message" rows="5"></textarea>
+                              <button type="submit">send</button>
+                         </form>
+              
+                        </div>
+                        
+        <div class="contact-right">
+          <h3>Reach Us</h3>
+
+          <table>
+                <tr>
+                    <td>Email:</td>
+                    <td>&nbsp; shimon22239@gmail.com</td>
+
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>&nbsp; +972 054 258 1130</td>
+
+              </tr>
+              <tr>
+                <td>Adress:</td>
+                <td>&nbsp; jabotinski 63,Tirat-Carmel</td>
+
+            </tr>
+          </table>
+
+        </div>
+
+     </div>
+     </div>
+</div>
+</body>
+</html>
+            
+            
